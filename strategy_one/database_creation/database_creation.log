@@ -1,0 +1,73 @@
+2024-06-03 17:22:51,832 | INFO | Initialised database_creation with db_path
+2024-06-03 17:25:55,997 | INFO | Initialised database_creation with db_path
+2024-06-03 17:28:56,391 | INFO | Initialised database_creation with db_path
+2024-06-04 09:53:53,633 | INFO | Initialised database_creation with db_path
+2024-06-04 11:37:53,234 | INFO | Initialised database_creation with db_path
+2024-06-04 11:40:39,890 | INFO | Initialised database_creation with db_path
+2024-06-04 11:45:26,882 | INFO | Initialised database_creation with db_path
+2024-06-04 11:55:00,094 | INFO | Initialised database_creation with db_path
+2024-06-04 14:28:35,554 | INFO | Initialised database_creation with db_path
+2024-06-04 14:32:18,834 | INFO | Initialised database_creation with db_path
+2024-06-04 14:56:13,396 | INFO | Initialised database_creation with db_path
+2024-06-04 15:45:35,624 | INFO | Initialised database_creation with db_path
+2024-06-04 19:36:50,182 | INFO | Initialised database_creation with db_path
+2024-06-04 20:18:35,506 | INFO | Initialised database_creation with db_path
+2024-06-04 20:28:02,842 | INFO | Initialised database_creation with db_path
+2024-06-04 20:31:59,465 | INFO | Initialised database_creation with db_path
+2024-06-04 21:36:48,187 | INFO | Initialised database_creation with db_path
+2024-06-04 21:40:39,684 | INFO | Initialised database_creation with db_path
+2024-06-04 21:43:57,580 | INFO | Initialised database_creation with db_path
+2024-06-05 13:31:00,967 | INFO | Initialised database_creation with db_path
+2024-06-06 12:37:58,072 | INFO | Initialised database_creation with db_path
+2024-06-06 12:39:08,486 | INFO | Initialised database_creation with db_path
+2024-06-06 13:54:33,046 | INFO | Initialised database_creation with db_path
+2024-06-06 13:58:58,177 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 13:58:58,180 | INFO | Initialised database_creation with db_path
+2024-06-06 14:01:00,493 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 14:01:00,496 | INFO | Initialised database_creation with db_path
+2024-06-06 14:01:00,890 | ERROR | Error stopping MongoDB: Command '['mongod', '--eval', 'db.adminCommand({shutdown: 1})']' returned non-zero exit status 2.
+2024-06-06 14:06:07,237 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 14:06:07,239 | INFO | Initialised database_creation with db_path
+2024-06-06 14:06:07,647 | ERROR | Error stopping MongoDB: Command '['mongod', '--eval', 'db.adminCommand({shutdown: 1})']' returned non-zero exit status 2.
+2024-06-06 14:08:02,997 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 14:08:02,999 | INFO | Initialised database_creation with db_path
+2024-06-06 14:08:03,391 | ERROR | Error stopping MongoDB: Command '['mongod', '--eval', 'db.getSiblingDB("admin").shutdownServer()']' returned non-zero exit status 2.
+2024-06-06 14:08:49,429 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 14:08:49,432 | INFO | Initialised database_creation with db_path
+2024-06-06 14:12:18,394 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 14:12:18,397 | INFO | Initialised database_creation with db_path
+2024-06-06 14:12:19,306 | ERROR | Error stopping MongoDB: Command '['mongosh', '--eval', 'db.getSiblingDB("admin").shutdownServer()']' returned non-zero exit status 1.
+2024-06-06 16:48:56,611 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 16:48:56,616 | INFO | Initialised database_creation with db_path
+2024-06-06 16:49:02,678 | ERROR | Error stopping MongoDB: Command '['sudo', 'mongosh', '--eval', 'db.getSiblingDB("admin").shutdownServer()']' returned non-zero exit status 1.
+2024-06-06 17:15:01,045 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 17:15:01,048 | INFO | Initialised database_creation with db_path
+2024-06-06 17:15:01,985 | ERROR | Error stopping MongoDB: Command '['mongosh', '--eval', 'db.getSiblingDB("admin").shutdownServer()']' returned non-zero exit status 1.
+2024-06-06 17:15:27,226 | INFO | Initialised database_creation with db_path
+2024-06-06 17:15:45,894 | INFO | Initialised database_creation with db_path
+2024-06-06 17:17:06,466 | INFO | Initialised database_creation with db_path
+2024-06-06 17:19:15,534 | INFO | Initialised database_creation with db_path
+2024-06-06 17:21:43,322 | INFO | Initialised database_creation with db_path
+2024-06-06 17:21:50,954 | INFO | Initialised database_creation with db_path
+2024-06-06 17:23:46,602 | INFO | Initialised database_creation with db_path
+2024-06-06 17:24:50,648 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 17:24:50,651 | INFO | Initialised database_creation with db_path
+2024-06-06 17:24:51,646 | ERROR | Error stopping MongoDB: Command '['mongosh', '--eval', 'db.getSiblingDB("admin").shutdownServer()']' returned non-zero exit status 1.
+2024-06-06 17:26:59,641 | INFO | Initialised database_creation with db_path
+2024-06-06 17:26:59,642 | ERROR | Error Creating database for file 14112022: unconverted data remains: 22
+2024-06-06 17:37:57,154 | INFO | Initialised database_creation with db_path
+2024-06-06 17:37:57,155 | ERROR | Error Creating database for file 14112022: unconverted data remains: 22
+2024-06-06 17:38:45,554 | ERROR | Error starting MongoDB: Command '['mongod', '--dbpath', '/usr/local/var/mongodb']' returned non-zero exit status 48.
+2024-06-06 17:38:45,556 | INFO | Initialised database_creation with db_path
+2024-06-06 17:38:46,640 | ERROR | Error stopping MongoDB: Command '['mongosh', '--eval', 'db.getSiblingDB("admin").shutdownServer()']' returned non-zero exit status 1.
+2024-06-06 17:41:01,351 | INFO | Initialised database_creation with db_path
+2024-06-06 17:41:06,089 | INFO | Initialised database_creation with db_path
+2024-06-06 18:04:26,511 | INFO | Initialised database_creation with db_path
+2024-06-06 18:04:26,513 | ERROR | Error Creating database for file None: File and collection_name must be specified
+2024-06-06 18:04:51,251 | INFO | Initialised database_creation with db_path
+2024-06-06 18:04:51,253 | ERROR | Error Creating database for file None: File and collection_name must be specified
+2024-06-06 18:06:26,700 | INFO | Initialised database_creation with db_path
+2024-06-06 18:06:26,700 | ERROR | Error Creating database for file None: File and collection_name must be specified
+2024-06-06 18:09:27,563 | INFO | Initialised database_creation with db_path
+2024-06-06 18:09:33,622 | INFO | Data entered: db_14_11_2022
+2024-06-06 18:09:33,718 | INFO | Database inserted into the collection

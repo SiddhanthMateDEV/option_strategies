@@ -9,6 +9,14 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 import logging
 
+
+def debug(func):
+    def wrapper():
+        function_name = func.__name__
+        message = fr"{function_name} Running"
+        return message
+    return wrapper
+
 logging.basicConfig(filename='database_creation.log', 
                     level=logging.INFO,
                     format='%(asctime)s | %(levelname)s | %(message)s')
@@ -32,7 +40,6 @@ def get_files(root_path):
         raise ValueError("root_path is not specified")
     return [file_[:-4] for file_ in os.listdir(root_path) if file_.endswith(".csv")]
 
-
 class database_creation:
     def __init__(self, 
                  db_path = None,
@@ -54,6 +61,7 @@ class database_creation:
         self.client = MongoClient("mongodb://localhost:27017/")
         logging.info(f"Initialised database_creation with db_path")
 
+    @debug
     def extract_attributes_of_file(self,file):
         # for bookeeping purposes lets do some extra steps
         '''
@@ -65,12 +73,11 @@ class database_creation:
             raise ValueError("File and collection_name must be specified")
         
         self.file = file
-
         self.day = self.file[:2]
         self.month = self.file[2:4]
         self.year = self.file[4:]
 
-
+    @debug
     def insert_database(self):
                 
         data_str = fr"{self.day}_{self.month}_{self.year}"
@@ -87,7 +94,7 @@ class database_creation:
         logging.info(f"Data entered: {db_name}")
         print(fr"Data for the {db_name} Entered Succesfully")
 
-
+    @debug
     def create_database(self,file = None):
         
         try:
@@ -98,31 +105,60 @@ class database_creation:
         except Exception as e:
             logging.error(f"Error Creating database for file {self.file}: {e}")
 
+    # @debug
+    # def file_last_call(self):
+    #     print(fr"{db_name}")
+
+
+def thread_function(collection_name = None,
+                    db_path = None,
+                    root_path = None,
+                    files_ = None
+                    ):
+    class_attr = {
+        "collection_name": collection_name,
+        "db_path": db_path,
+        "root_path": root_path
+    }
+
+    cpu_no_ = os.cpu_count()
+    try:
+        with ThreadPoolExecutor(max_workers = cpu_no_) as executor:
+            db_creator = database_creation(**class_attr)
+            executor.map(db_creator.create_database,files_)
+    except Exception as e:
+        logging.error(f"Error in ThreadPoolExecutor: {e}")
+
+
 def main():
     root_dir = fr"/Users/siddhanthmate/Desktop/AllFiles/CODE/WORK_CODE/fintech/DATA/options_data/2022"
-    files_ = get_files(root_path = root_dir)
 
+
+    parent_filename_1 = fr"/Users/siddhanthmate/Desktop/AllFiles/DATA/options_data/drive-download-20240512T050709Z-006"
+
+    root_dir = [
+                fr"{parent_filename_1}/2022",
+                fr"{parent_filename_1}/NIFTY",
+                fr"{parent_filename_1}/SET1DATA"
+    ]
+
+    files_ = get_files(root_path = root_dir)
     # here im putting the upper limit of cpu usage adjust this accordingly
     cpu_no_ = os.cpu_count()
-
     class_attr = {
         "collection_name": "options_data",
         "db_path": fr"/usr/local/var/mongodb",
         "root_path": root_dir
     }
-
     # start_mongodb(class_attr["db_path"])
-
-
+    cpu_no_ = os.cpu_count()
+    
     try:
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers = cpu_no_) as executor:
             db_creator = database_creation(**class_attr)
             executor.map(db_creator.create_database,files_)
     except Exception as e:
         logging.error(f"Error in ThreadPoolExecutor: {e}")
-    # finally:
-    #     stop_mongodb()
-
-
+    
 if __name__=="__main__":
     main()

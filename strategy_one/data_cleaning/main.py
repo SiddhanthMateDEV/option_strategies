@@ -34,7 +34,6 @@ class clean_data:
             }
         else:
             return None
-        
 
     def clean_list_of_dicts(self):
         for d in self.dictionary_list:
@@ -42,5 +41,7 @@ class clean_data:
                 extracted_info = self.extract_info(d['Ticker'])
                 if extracted_info:
                     d.update(extracted_info)
+
+    
         
     
